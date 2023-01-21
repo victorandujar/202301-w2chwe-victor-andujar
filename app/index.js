@@ -1,3 +1,3 @@
-import boardConstructor from "./board/board.js";
+import gameInit from "./gameinit/gameinit";
 
-console.table(boardConstructor(5, 5));
+console.table(gameInit);

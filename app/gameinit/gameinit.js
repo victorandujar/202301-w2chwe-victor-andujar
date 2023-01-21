@@ -1,10 +1,4 @@
-import boardConstructor from "../board/board.js";
-
-const gameInit = () => {
-  const rows = 10;
-  const columns = 10;
-  const board = boardConstructor(rows, columns);
-
+const gameInit = (board) => {
   const generateRandomNumber = (max) => Math.floor(Math.random() * max);
 
   for (let i = 0; i < board.length; i++) {
@@ -23,7 +17,7 @@ const gameInit = () => {
           positionRow: i,
           positionColumn: j,
           status: 0,
-          willBeAlive: true,
+          willBeAlive: false,
           neighbours: 0,
         };
       }

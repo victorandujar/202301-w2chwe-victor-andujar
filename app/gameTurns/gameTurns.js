@@ -1,4 +1,4 @@
-const gameTurn = (cells) => {
+const gameTurns = (cells) => {
   const cellStatus = [];
 
   for (let row = 0; row < cells.length; row++) {
@@ -11,4 +11,4 @@ const gameTurn = (cells) => {
   return cellStatus;
 };
 
-export default gameTurn;
+export default gameTurns;

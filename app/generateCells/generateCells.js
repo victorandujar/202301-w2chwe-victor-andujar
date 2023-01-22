@@ -9,16 +9,12 @@ const gameInit = (board) => {
           positionRow: row,
           positionColumn: column,
           status: 1,
-          checked: false,
-          neighbours: 0,
         };
       } else {
         board[row][column] = {
           positionRow: row,
           positionColumn: column,
           status: 0,
-          checked: false,
-          neighbours: 0,
         };
       }
     }

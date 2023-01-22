@@ -10,7 +10,7 @@ const countNeighbours = (cells, row, column) => {
         cells[row + i][column + j].status === 1
       ) {
         neighbours++;
-        cells[i][j].checked = true;
+        cells[row + i][column + j].checked = true;
       }
     }
   }
@@ -19,26 +19,21 @@ const countNeighbours = (cells, row, column) => {
 };
 
 const algortim = (cells) => {
-  const eachTurnBoard = cells;
-  for (let i = 0; i < eachTurnBoard.length; i++) {
-    for (let j = 0; j < eachTurnBoard[i].length; j++) {
-      const neighbours = countNeighbours(eachTurnBoard, i, j);
-      if (
-        eachTurnBoard[i][j].status === 1 &&
-        neighbours > 1 &&
-        neighbours < 4
-      ) {
-        eachTurnBoard[i][j].status = 1;
-        if (!eachTurnBoard[i][j].checked) {
-          // Add new neighbour
+  for (let i = 0; i < cells.length; i++) {
+    for (let j = 0; j < cells.length; j++) {
+      const neighbours = countNeighbours(cells, i, j);
+      if (cells[i][j].status === 1 && neighbours > 1 && neighbours < 4) {
+        cells[i][j].status = 1;
+        if (!cells[i][j].checked) {
+          cells[i][j].status = 1;
         }
       } else {
-        eachTurnBoard[i][j].status = 0;
+        cells[i][j].status = 0;
       }
     }
   }
 
-  return eachTurnBoard;
+  return cells;
 };
 
 export default algortim;

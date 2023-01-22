@@ -1,15 +1,15 @@
 const gameInit = (board) => {
-  const generateRandomNumber = (max) => Math.floor(Math.random() * max);
+  const generateRandomNumber = (max) => Math.random() * max;
 
   for (let i = 0; i < board.length; i++) {
     for (let j = 0; j < board[i].length; j++) {
-      const randomNumber = generateRandomNumber(2);
-      if (randomNumber < 0.5) {
+      const randomNumber = generateRandomNumber(1);
+      if (randomNumber < 0.2) {
         board[i][j] = {
           positionRow: i,
           positionColumn: j,
           status: 1,
-          willBeAlive: true,
+          checked: false,
           neighbours: 0,
         };
       } else {
@@ -17,7 +17,7 @@ const gameInit = (board) => {
           positionRow: i,
           positionColumn: j,
           status: 0,
-          willBeAlive: false,
+          checked: false,
           neighbours: 0,
         };
       }

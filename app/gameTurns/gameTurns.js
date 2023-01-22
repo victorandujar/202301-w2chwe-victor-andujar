@@ -1,10 +1,10 @@
-const gameTurn = (generateCells) => {
+const gameTurn = (cells) => {
   const cellStatus = [];
 
-  for (let i = 0; i < generateCells.length; i++) {
+  for (let i = 0; i < cells.length; i++) {
     cellStatus[i] = [];
-    for (let j = 0; j < generateCells.length; j++) {
-      cellStatus[i][j] = generateCells[i][j].status;
+    for (let j = 0; j < cells.length; j++) {
+      cellStatus[i][j] = cells[i][j].status;
     }
   }
 

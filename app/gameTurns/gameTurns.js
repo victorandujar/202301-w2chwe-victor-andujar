@@ -1,10 +1,10 @@
 const gameTurn = (cells) => {
   const cellStatus = [];
 
-  for (let i = 0; i < cells.length; i++) {
-    cellStatus[i] = [];
-    for (let j = 0; j < cells.length; j++) {
-      cellStatus[i][j] = cells[i][j].status;
+  for (let row = 0; row < cells.length; row++) {
+    cellStatus[row] = [];
+    for (let column = 0; column < cells.length; column++) {
+      cellStatus[row][column] = cells[row][column].status;
     }
   }
 

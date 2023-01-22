@@ -30,6 +30,10 @@ const algortim = (cells) => {
       } else {
         cells[i][j].status = 0;
       }
+
+      if (cells[i][j].status === 0 && neighbours === 3) {
+        cells[i][j].status = 1;
+      }
     }
   }
 

@@ -4,7 +4,7 @@ const gameInit = (board) => {
   for (let i = 0; i < board.length; i++) {
     for (let j = 0; j < board[i].length; j++) {
       const randomNumber = generateRandomNumber(1);
-      if (randomNumber < 0.2) {
+      if (randomNumber < 0.4) {
         board[i][j] = {
           positionRow: i,
           positionColumn: j,

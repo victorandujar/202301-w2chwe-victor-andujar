@@ -12,7 +12,6 @@ const countNeighbours = (cells, row, column) => {
         cells[row + i][column + j].status === 1
       ) {
         neighbours++;
-        cells[row + i][column + j].checked = true;
       }
     }
   }
@@ -20,23 +19,23 @@ const countNeighbours = (cells, row, column) => {
   return neighbours;
 };
 
-const algoritm = (cells) => {
+const algorithm = (cells) => {
+  const newCells = cells;
+
   for (let row = 0; row < cells.length; row++) {
     for (let column = 0; column < cells.length; column++) {
       const neighbours = countNeighbours(cells, row, column);
       if (cells[row][column].status === 1 && neighbours > 1 && neighbours < 4) {
-        cells[row][column].status = 1;
+        newCells[row][column].status = 1;
+      } else if (cells[row][column].status === 0 && neighbours === 3) {
+        newCells[row][column].status = 1;
       } else {
-        cells[row][column].status = 0;
-      }
-
-      if (cells[row][column].status === 0 && neighbours === 3) {
-        cells[row][column].status = 1;
+        newCells[row][column].status = 0;
       }
     }
   }
 
-  return cells;
+  return newCells;
 };
 
-export default algoritm;
+export default algorithm;
